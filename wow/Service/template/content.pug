@@ -1,0 +1,16 @@
+
+p Hi #{'JesuDoss'},
+p Here is your new order.
+p From           : #{obj.username},
+p Email id       : #{obj.email},
+p Store Name     : #{obj.store_name},
+p contact Number : #{obj.phonenumber},
+p Addresss       : #{obj.address},
+p zipcode        : #{obj.zipcode},
+
+each p,i in message
+   span Product Name : #{message[i].product_name} ,
+   span Quantity     : #{message[i].amount} ,
+   br
+
+
