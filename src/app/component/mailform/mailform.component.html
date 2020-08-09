@@ -1,0 +1,31 @@
+<ion-header translucent>
+  <ion-toolbar class="headerclr">
+    <ion-buttons slot="end">
+      <ion-button color="black" (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+    <ion-title>Mail Us</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="imgbck">
+
+  <div class="container">
+    <form (ngSubmit)="logForm()" class="centering">
+      <ion-row>
+        <ion-label class="labeldesc"> Thanks for your recent purchase with us! I hope you're enjoying your new
+          product.
+          Please provide us the Product Details and the Quantity you need . We will deliver you as soon as possible
+        </ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-input class="styles" [(ngModel)]="todo.description" name="description"
+          placeholder="Enter the product Details ">
+        </ion-input>
+      </ion-row>
+      <br>
+      <ion-row>
+        <ion-button style="margin: auto" type="submit">Submit</ion-button>
+      </ion-row>
+    </form>
+  </div>
+</ion-content>

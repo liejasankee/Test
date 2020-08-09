@@ -1,0 +1,91 @@
+<ion-header>
+
+  <ion-toolbar class="headerclr">
+    <ion-buttons slot="start">
+      <ion-back-button class="backbtnspec" icon="chevron-back" [text]="''"></ion-back-button>
+      <ion-menu-button class="menubtnspec" [disabled]="false">
+      </ion-menu-button>
+    </ion-buttons>
+    <app-header></app-header>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="loadimg">
+  <lottie-animation-view [options]="load" [width]="200" [height]="200" style="text-align: center;">
+  </lottie-animation-view>
+</ion-content>
+<ion-content *ngIf="!loadimg">
+  <div>
+    <ion-grid class="grid1">
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="getviewtype('grid')" class="iconspec">
+            <ion-icon name="grid"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="getviewtype('list')" class="iconspec">
+            <ion-icon name="list"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div *ngIf="viewtype">
+    <ion-grid class="grid3">
+      <ion-row>
+        <ion-col>
+          <ion-row *ngFor="let c of categories">
+            <ion-card class="cardspec">
+
+              <ion-card-content class="prodcard" *ngIf="!c.sub_categories">
+                <div>
+                  <img class="imgspec" src="https://b2b.wownaturalfoods.com/api/asset/{{c.image_url}}.jpeg"
+                    style="width: 100%; height: 100%;" [routerLink]="['../../', c.route]">
+                  <div class="centeredspecial"> {{c.categories_name}}</div>
+                </div>
+              </ion-card-content>
+              <ion-card-content class="prodcard" *ngIf="c.sub_categories">
+                <div>
+                  <img class="imgspec" src="https://b2b.wownaturalfoods.com/api/asset/{{c.image_url}}.jpeg"
+                    style="width: 100%; height: 100%;" (click)="opensubcategory(c.id)">
+                  <div class="centeredspecial"> {{c.categories_name}}</div>
+                </div>
+              </ion-card-content>
+            </ion-card>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngIf="!viewtype">
+    <ion-grid class="grid2">
+
+      <ion-row>
+        <ion-col size-xs="6" size-sm="4" size-md="3" *ngFor=" let c of categories">
+          <ion-card class="prodcard1" *ngIf="!c.sub_categories" style="min-width: 120px;">
+            <ion-card-title text-wrap class="title1spec" [routerLink]="['../../', c.route]">
+              {{c.categories_name}}</ion-card-title>
+
+            <img class="imgspec1" src="https://b2b.wownaturalfoods.com/api/asset/{{c.image_url}}1.jpeg"
+              [routerLink]=" ['../../', c.route]">
+
+
+          </ion-card>
+          <ion-card class="prodcard1" *ngIf="c.sub_categories" style="min-width: 120px;"
+            (click)="opensubcategory(c.id)">
+            <ion-card-title text-wrap class="title1spec">
+              {{c.categories_name}}</ion-card-title>
+
+            <img class="imgspec1" src="https://b2b.wownaturalfoods.com/api/asset/{{c.image_url}}1.jpeg">
+
+
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+</ion-content>
+<app-footer></app-footer>

@@ -1,0 +1,101 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@media only screen and (max-width: 700px){
+    .login{
+        --background: url(assets/img/pic1_mobile.jpg) no-repeat center/cover fixed;
+       
+        background-size: cover;
+    }
+    }
+    @media only screen and (min-width: 700px){
+.login{
+    --background: url(assets/img/pic1.jpg)  no-repeat center/cover fixed;
+    background-size: cover;
+   
+}
+    }
+.centeredspecial {
+    position: absolute;
+    top: 86%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    font-family: serif;
+    font-size: medium;
+    letter-spacing: 0.1em;
+    width: 100%;
+    text-align: center;
+    -webkit-text-stroke: 0.1px #383a3e;
+    -webkit-text-fill-color: #ffca22;
+}
+
+  
+  .containerspecial {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+
+.img-center
+{
+    display: block;
+    margin: auto;
+}
+.headerclr
+{
+--background: orange;
+}
+.backbtnspec
+{   
+    padding: 0px;
+    box-sizing: border-box;
+    width: 30px;
+    min-width: 40px;
+    font-size: xx-small;
+
+}
+.menubtnspec
+{
+     
+    box-sizing: border-box;
+    padding: 0px;
+    font-size: larger;
+    width: 40px;
+
+}
+
+
+
+
+ion-menu-button {
+    color: var(--ion-color-light);
+   
+}
+ion-back-button{
+    color: var(--ion-color-light);
+}

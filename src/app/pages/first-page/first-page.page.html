@@ -1,0 +1,43 @@
+<ion-content *ngIf="!check" fullscreen class="ion-padding" scroll-y="false">
+  <div style="height: 15%; text-align: center">
+    <img style="height: 4em;" src="/assets/img/logo.png" />
+  </div>
+  <div style="height:70%">
+    <ion-slides>
+      <ion-slide>
+        <div class="slide">
+          <img src="assets/img/pic4.jpg" />
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="slide">
+          <img src="assets/img/pic5.jpg" />
+
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="slide">
+          <img src="assets/img/pic6.jpg" />
+
+        </div>
+      </ion-slide>
+
+    </ion-slides>
+  </div>
+  <ion-grid style="height:15%" class="gridstyle">
+    <ion-col>
+      <ion-row>
+        <ion-col>
+
+          <p (click)="signin()">Sign In</p>
+
+        </ion-col>
+        <ion-col>
+
+          <p routerLink="/pages/login">Log In</p>
+
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-grid>
+</ion-content>

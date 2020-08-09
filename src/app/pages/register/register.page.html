@@ -1,0 +1,121 @@
+<ion-header color="new">
+  <ion-toolbar class="new-background-color">
+    <ion-title style="text-align: -webkit-center;font-size: large;">Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="!singupsuccess">
+
+  <div *ngIf="customloaderpartner">
+    <div class="customLoadernew"></div>
+  </div>
+  <div class="wrapper bgloginclr">
+    <div class="inner">
+      <img src="assets/img/logo.png" class="img-center" />
+      <form class="form-signin" #signupForm="ngForm" novalidate>
+
+        <h3>Join With Us</h3>
+        <div class="form-group">
+
+          <div class="form-wrapper">
+            <ion-label for="inputEmail">First Name<b class="rglar">*</b></ion-label>
+            <ion-input type="text" class="form-control" name="firstName" ngModel #firstName="ngModel"
+              [ngClass]="{ 'is-invalid': signupForm.submitted && firstName.invalid }" required></ion-input>
+            <div *ngIf="signupForm.submitted && firstName.invalid" class="invalid-feedback">
+              <div *ngIf="firstName.errors.required">Please Enter First Name</div>
+            </div>
+          </div>
+          <div class="form-wrapper title-head">
+            <ion-label for="inputEmail">Last Name<b class="rglar">*</b></ion-label>
+            <ion-input type="text" class="form-control" name="lastName" ngModel #lastName="ngModel"
+              [ngClass]="{ 'is-invalid': signupForm.submitted && lastName.invalid }" required></ion-input>
+            <div *ngIf="signupForm.submitted && lastName.invalid" class="invalid-feedback">
+              <div *ngIf="lastName.errors.required">Please Enter Personal Number</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-wrapper">
+          <ion-label for="inputEmail">Store Name<b class="rglar">*</b></ion-label>
+          <ion-input type="text" class="form-control" name="storeName" ngModel #storeName="ngModel"
+            [ngClass]="{ 'is-invalid': signupForm.submitted && storeName.invalid }" required></ion-input>
+          <div *ngIf="signupForm.submitted && storeName.invalid" class="invalid-feedback">
+            <div *ngIf="storeName.errors.required">Please Enter Company Name</div>
+          </div>
+        </div>
+        <div class="form-wrapper">
+          <ion-label for="inputPassword">Email<b class="rglar">*</b></ion-label>
+          <ion-input type="email" id="inputEmail" class="form-control" name="email" ngModel #email="ngModel"
+            [ngClass]="{ 'is-invalid': signupForm.submitted && email.invalid }" required></ion-input>
+          <div *ngIf="signupForm.submitted && email.invalid" class="invalid-feedback">
+            <div *ngIf="email.errors.required">Please Enter Email</div>
+          </div>
+        </div>
+        <div class="form-wrapper">
+          <ion-label for="inputPassword">Password</ion-label>
+          <ion-input type="password" class="form-control" id="inputPassword" name="password" ngModel #password="ngModel"
+            [ngClass]="{ 'is-invalid': signupForm.submitted && password.invalid }" required></ion-input>
+          <div *ngIf="signupForm.submitted && password.invalid" class="invalid-feedback">
+            <div *ngIf="password.errors.required">Please Enter Password</div>
+          </div>
+        </div>
+        <div class="form-wrapper">
+          <ion-label for="">Confirm Password</ion-label>
+          <ion-input type="password" class="form-control" name="confirmpassword" ngModel #confirmpassword="ngModel"
+            [ngClass]="{ 'is-invalid': signupForm.submitted && confirmpassword.invalid }" required></ion-input>
+          <div *ngIf="signupForm.submitted && confirmpassword.invalid" class="invalid-feedback">
+            <div *ngIf="confirmpassword.errors.required">Please Enter Confirm Password</div>
+          </div>
+          <div class="customvalidtion" *ngIf="signupForm.value.password !== signupForm.value.confirmpassword">
+            Passwords don't match.
+          </div>
+        </div>
+
+        <div class="form-wrapper">
+          <ion-label for="inputEmail">Contact Number</ion-label>
+
+          <ion-input type="number" class="form-control" name="contact" ngModel #contact="ngModel"
+            [ngClass]="{ 'is-invalid': signupForm.submitted && contact.invalid }" required>
+          </ion-input>
+          <div *ngIf="signupForm.submitted && contact.invalid" class="invalid-feedback">
+            <div *ngIf="contact.errors.required">Please Enter contact Number</div>
+          </div>
+
+        </div>
+        <div class="form-wrapper">
+          <ion-label for="inputEmail">Addresss</ion-label>
+
+          <ion-input class="input form-control ctm_mobile" type="text" id="currentLocation" [(ngModel)]="modelslocation"
+            name="address" #addresstext #address="ngModel" (setAddress)="getAddress($event,address)"
+            addressType="geocode" [ngClass]="{ 'is-invalid': signupForm.submitted && address.invalid }" required>
+          </ion-input>
+          <div *ngIf="signupForm.submitted && address.invalid" class="invalid-feedback">
+            <div *ngIf="address.errors.required">Please Enter Location</div>
+          </div>
+
+        </div>
+        <div class="form-wrapper">
+          <ion-label for="inputEmail">Zipcode</ion-label>
+
+          <ion-input type="number" class="form-control" name="Zipcode" ngModel #Zipcode="ngModel"
+            [ngClass]="{ 'is-invalid': signupForm.submitted && Zipcode.invalid }" required>
+          </ion-input>
+          <div *ngIf="signupForm.submitted && Zipcode.invalid" class="invalid-feedback">
+            <div *ngIf="Zipcode.errors.required">Please Enter Zipcode</div>
+          </div>
+
+        </div>
+
+        <p class="ctm_err_msg" *ngIf="errormsgfromSingupshow">{{errormsgfromSingup}}</p>
+        <ion-button class="ionbut" type="submit" (click)="singuppartnerclick(signupForm)">Register Now</ion-button>
+        <hr class="my-4">
+        <div class="text-center">
+          <p style="color: black; text-align: center;">Already have an account! <a routerLink="/login-partner"
+              style="color:blue" class="cursor_pointer" [routerLink]="['/pages/login']">Log in</a></p>
+        </div>
+      </form><br>
+    </div>
+  </div>
+
+  <!-- success msg -->
+
+</ion-content>

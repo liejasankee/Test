@@ -1,0 +1,32 @@
+ion-footer {
+    background: var(--ion-color-dark);
+    padding: 6px 0 6px 0;
+  }
+  .center
+  {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .space{
+margin-left:3em
+  }
+ 
+  
+  #social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    ion-icon {
+      color: var(--ion-color-light);
+      font-size: 1.5rem;
+      padding: 0 12px 0 12px;
+    }
+  
+  
+  }
+  
+ 
+  

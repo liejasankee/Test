@@ -1,0 +1,21 @@
+.ion-page > ion-header {
+    position: relative !important;
+    }
+    
+    .ion-page > ion-content {
+    position: relative !important;
+    }
+    
+    .ion-page > ion-content > .fixed-content,
+    .ion-page > ion-content > .scroll-content {
+    margin: 0 !important;
+    }
+    #container {
+        text-align: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0%;
+        transform: translateY(0%);
+      }
+      

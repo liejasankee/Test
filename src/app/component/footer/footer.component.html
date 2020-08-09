@@ -1,0 +1,29 @@
+<ion-footer #footer no-border>
+  <div class="center">
+    <ion-grid fixed>
+      <ion-row style="justify-content: center;">
+        <ion-col sizeXs="12" sizeLg="6" id="social">
+          <ion-buttons (click)="open('https://www.facebook.com/wownaturalfoods')" target="blank">
+            <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+          </ion-buttons>
+          <ion-buttons (click)="open('https://twitter.com/wownaturalfoods')" target="blank">
+            <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+          </ion-buttons>
+          <ion-buttons (click)="open('https://twitter.com/wownaturalfoods')" starget="blank">
+            <ion-icon slot="icon-only" name="logo-youtube"></ion-icon>
+          </ion-buttons>
+          <span class="space"></span>
+          <ion-buttons (click)="notify()">
+            <ion-icon slot="icon-only" name="notifications"></ion-icon>
+          </ion-buttons>
+          <ion-buttons (click)="call()">
+            <ion-icon slot="icon-only" name="call"></ion-icon>
+          </ion-buttons>
+          <ion-buttons (click)="sendTxt()">
+            <ion-icon slot="icon-only" name="chatbubble"></ion-icon>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-footer>

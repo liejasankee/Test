@@ -1,0 +1,79 @@
+<ion-content fullscreen class="login" force-overscroll="false">
+
+
+  <!-- <img class="logo" src="assets/img/logo-icon.png"> -->
+
+  <form #loginForm="ngForm" class="loginform" novalidate>
+    <ion-grid>
+      <ion-row color="primary" class="ion-justify-content-center">
+        <ion-col align-self-center>
+          <div text-center>
+            <h3 class="loginstyle">Login</h3>
+            <p style="text-align: center ; color: orange;" *ngIf="errorMsglogin" class="customvalidtion">Invalid
+              Username or Password
+            </p>
+          </div>
+          <div padding>
+            <ion-row>
+              <ion-col col-12>
+                <ion-item>
+                  <ion-input name="email" type="email" placeholder="your@email.com" ngModel #email="ngModel"
+                    [ngClass]="{ 'is-invalid': loginForm.submitted && email.invalid }" required>
+                  </ion-input>
+                  <div *ngIf="loginForm.submitted && email.invalid" class="invalid-feedback">
+                    <div *ngIf="email.errors.required">Please Enter Username</div>
+                  </div>
+
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-item>
+              <ion-input name="password" [type]="password" clearOnEdit="false" placeholder="Password" ngModel
+                #Password="ngModel" [ngClass]="{ 'is-invalid': loginForm.submitted && Password.invalid }" required
+                password></ion-input>
+              <ion-icon item-end [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
+
+              <div *ngIf="loginForm.submitted && Password.invalid" class="invalid-feedback">
+                <div *ngIf="Password.errors.required">Please Enter Password</div>
+              </div>
+            </ion-item>
+          </div>
+          <br>
+          <br>
+          <div padding>
+            <ion-button class="btn-log-in" size="large" type="submit" [disabled]="loginForm.invalid" expand="block"
+              (click)="login(loginForm)">
+              login
+            </ion-button>
+          </div>
+          <ion-row>
+            <!-- <ion-col col-12 (click)=" onClickForgotPassword()">
+                <p style="text-align: center">{{"FORGOT PASSWORD ?"}}</p>
+              </ion-col> -->
+          </ion-row>
+          <br>
+          <br>
+          <ion-row style="justify-content: center;">
+
+            <a (click)="Register()" style="text-align: center ;display: block;">
+              {{"REGISTER NOW !"}}
+            </a>
+          </ion-row>
+          <ion-row style="justify-content: center;">
+
+            <a (click)="pswd()" style="text-align: center ;display: block;">
+              {{"FORGOT PASSWORD !"}}
+            </a>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+
+  <!--go to registration-->
+
+
+
+</ion-content>

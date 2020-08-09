@@ -1,0 +1,83 @@
+
+    .btn-log-in {
+
+      background-color: primary;
+      margin: auto;
+    }
+    .passwordIcon{
+      font-size: 2rem !important;
+    position: relative !important;
+    top: 0px !important;
+    margin: 0 auto !important;
+   }
+
+   ion-menu{
+max-width: 0;
+}
+   
+    .loginstyle
+    {
+      text-align: center;
+      margin: 22px auto 12px;
+      font-family: cursive;
+      color: ORange;
+    }
+
+    #myVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 10%;
+      min-height: 10%;
+    }
+    .ion-header
+    {
+        color: yellow;
+    }
+    .item {
+      background-color: rgba(119, 119, 119, 0.8);
+      width: 80%;
+      display: block;
+      margin: 0 auto;
+      border-radius: 5px;
+    }
+    .item.item-block .item-inner {
+      border-bottom: 0px;
+    }
+    .item-input .label {
+      color: white;
+    }
+    
+    .logo {
+        max-width: 20%;
+        border: 0;
+        display: block;
+        margin: 0 auto;
+    
+      }
+    .login-btn {
+      width: 80%;
+      display: block;
+      margin: 0 auto;
+      border-radius: 5px;
+      height: 4.4rem;
+      background-color: primary;
+    }
+    .social-icon {
+      width: 86px;
+      padding: 0px 20px;
+    }
+  
+  .loginform{
+    position: absolute;
+    width: 100%;
+    top: calc(50% - 200px);
+  }
+
+  @media only screen and (min-width: 600px) {
+    .loginform{
+      width: 500px;
+      top: calc(50% - 200px);
+      left: calc(50% - 250px);
+    }
+  }

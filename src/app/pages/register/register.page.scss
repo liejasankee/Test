@@ -1,0 +1,134 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .new-background-color{
+    --background: orange;
+}
+  body {
+    font-family: initial;
+    font-size: 15px;
+    margin: 0;
+  
+  }
+  
+  input, textarea, select, button {
+    font-family: 'Montserrat', sans-serif;
+    color: #666;
+    font-size: 15px;
+  }
+
+  .wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow-y: auto;
+  }
+  
+  .inner {
+    min-width: 650px;
+    margin: 2% auto;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    box-shadow: 2px 2px 4px 2px #ddd;
+  
+  
+  }
+    .inner h3 {
+      text-transform: uppercase;
+      font-size: 22px;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      margin-bottom: 32px;
+      color: #823AB9;
+      letter-spacing: 2px;
+    }
+  
+  form {
+    width: 100%;
+    padding-left: 45px;
+   }
+  
+  .form-group {
+    display: flex;
+  }
+  .form-group .form-wrapper {
+      width: 50%;
+  }
+  .form-group .form-wrapper:first-child {
+        margin-right: 20px;
+  
+  }
+  
+  .form-wrapper {
+    margin-bottom: 17px;
+  
+  }
+    .form-wrapper label {
+      margin-bottom: 9px;
+      display: block;
+    }
+  
+  .form-control {
+    border: 1px solid #ccc;
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 0 20px;
+    /* border-radius: 20px; */
+    font-family: 'Montserrat', sans-serif;
+    background: none;
+  }
+    .form-control:focus {
+      border: 1px solid #12CD2A;
+    }
+  
+  select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    padding-left: 20px;
+    }
+  
+  
+   .ionbut
+   {
+    display: block;
+    width: 60%;
+    margin: auto;
+   }
+  
+  
+  
+  @media (max-width: 991px) {
+    .inner {
+      min-width: 768px; } }
+  @media (max-width: 767px) {
+    .inner {
+      width: 95%;
+      min-width: auto;
+      background: #fff;
+      padding-top: 0;
+      padding-bottom: 0; }
+  
+    form {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-top: 50px;
+       
+        padding-bottom: 50px;
+    } }
+  
+  .bgloginclr{
+        background: #efefef;
+  }
+  .invalid-feedback{
+    font-size: 100%;
+    color: red;;
+  }
+  .rglar {
+    color: red;
+  }
+ 

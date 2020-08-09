@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar class="headerclr">
+    <ion-buttons slot="start">
+      <ion-back-button class="backbtnspec" icon="chevron-back" [text]="''"></ion-back-button>
+      <ion-menu-button class="menubtnspec" [disabled]="false">
+      </ion-menu-button>
+    </ion-buttons>
+    <app-header></app-header>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container">
+    <app-product-list [link]="link" [check]="check" [subcategory]="subcat"></app-product-list>
+  </div>
+</ion-content>
+
+<app-footer></app-footer>

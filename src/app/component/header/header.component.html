@@ -1,0 +1,20 @@
+<ion-grid id="centre">
+  <ion-col>
+    <div sizeXs="12" sizeLg="6" id="social">
+      <img class="imgspec" src="assets/img/logo.png" />
+      <ion-buttons class="flex">
+        <ion-icon slot="icon-only" name="pricetags-outline" (click)="opencatalog()"></ion-icon>
+        <p>Catlogue</p>
+      </ion-buttons>
+      <ion-buttons class="flex" (click)="openCart()">
+        <div class="cart-length">{{ cartItemCount | async }}</div>
+        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+        <p>cart</p>
+      </ion-buttons>
+      <ion-buttons class="flex" (click)="openoffer()">
+        <ion-icon slot="icon-only" name="star-outline"></ion-icon>
+        <p>Offers</p>
+      </ion-buttons>
+    </div>
+  </ion-col>
+</ion-grid>

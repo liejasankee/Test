@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar class="headerclr">
+    <ion-buttons slot="start">
+      <ion-back-button class="backbtnspec" icon="chevron-back" [text]="''" [text]="''" (click)="back()">
+      </ion-back-button>
+      <ion-menu-button class="menubtnspec" [disabled]="false">
+      </ion-menu-button>
+    </ion-buttons>
+    <app-header></app-header>
+  </ion-toolbar>
+</ion-header>
+<ion-content *ngIf="loadimg">
+  <lottie-animation-view [options]="load" [width]="200" [height]="200" style="text-align: center;">
+  </lottie-animation-view>
+</ion-content>
+<ion-content fullscreen *ngIf="!loadimg">
+  <ion-card *ngFor="let product of products">
+    <div class="prodcard">
+      <img class="imgspec" src="https://b2b.wownaturalfoods.com/api/asset/medium/{{product.image}}.jpg" />
+    </div>
+    <ion-card-header style="padding :0px;">
+      <!-- <ion-card-subtitle>{{product.product_name}}</ion-card-subtitle> -->
+      <p class="prodname">{{product.product_name}}
+      <p>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+
+        <ion-row style="justify-content: center;">
+          <ion-col size="4" class="wrapper">
+            <ion-button style="font-size: medium;" color="new" class="marginbtn" fill="clear" size="small"
+              (click)="decreaseProductCount()">
+              <ion-icon name="remove-circle" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4" class="wrapper">
+            <p class="p" style="margin-top: 0.5em;" *ngIf="!product.amount">1</p>
+            <p class="p" style="margin-top: 0.5em;" *ngIf="product.amount">{{product.amount}}</p>
+          </ion-col>
+          <ion-col size="4" class="wrapper">
+            <ion-button style="font-size: medium;" color="new" fill="clear" (click)="increaseProductCount()">
+              <ion-icon name="add-circle" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row style="justify-content: center;">
+          <ion-button class="addtocart" (click)="addToCart()">add to cart
+          </ion-button>
+
+        </ion-row>
+        <br>
+        <br>
+        <ion-row style="justify-content: center;">
+          <ion-card>
+
+            <div style="padding: 10px;" [innerHTML]="product.prod_desc"></div>
+          </ion-card>
+        </ion-row>
+
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<app-footer></app-footer>

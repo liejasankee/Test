@@ -1,0 +1,87 @@
+<ion-content *ngIf="loadimg">
+  <lottie-animation-view [options]="load" [width]="200" [height]="200">
+  </lottie-animation-view>
+</ion-content>
+<ion-content *ngIf="!loadimg">
+  <ion-list>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-xs="6" size-sm="4" size-md="3" *ngFor="let p of products">
+          <ion-card class="card">
+            <div>
+              <ion-row class="spec">
+                <img class="imgspec" src="https://b2b.wownaturalfoods.com/api/asset/small/{{p.image}}.jpg"
+                  (click)="openproductdetail(p.id)" />
+              </ion-row>
+
+              <ion-row class="prod_name">
+
+                <p id="title" text wrap>{{ p.product_name }}</p>
+
+              </ion-row>
+
+              <ion-row class="flex" *ngIf="p.buyonegetone" style="margin-top: -18px;">
+                <ion-col size="4">
+                  <ion-label style="margin: auto" color="secondary">
+                    <b>{{ p.price | currency:'$' }}</b>
+                  </ion-label>
+                </ion-col>
+                <ion-col size="8">
+                  <p style="font-weight:400px;">Buy1 Get1</p>
+                </ion-col>
+
+              </ion-row>
+
+
+              <ion-row class="flex" *ngIf="p.InSale" style="margin-bottom: 10px;">
+                <ion-col>
+                  <ion-label style="margin: auto" color="secondary">
+                    <b id="strike">{{ p.price | currency:'$' }}</b>
+                  </ion-label>
+                </ion-col>
+                <ion-col>
+                  <ion-label style="margin: auto" color="secondary">
+                    <b>{{ p.salePrice | currency:'$' }}</b>
+                  </ion-label>
+                </ion-col>
+
+              </ion-row>
+
+
+              <ion-row class="flex" *ngIf="!p.Offer" style="margin-bottom: 10px;">
+                <ion-col>
+                  <ion-label style="margin: auto" color="secondary">
+                    <b>{{ p.price | currency:'$' }}</b>
+                  </ion-label>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="4" class="wrapper">
+                  <ion-button color="new" class="marginbtn" fill="clear" size="small" (click)="decreaseProductCount(p)">
+                    <ion-icon name="remove-circle" slot="icon-only"></ion-icon>
+                  </ion-button>
+                </ion-col>
+                <ion-col size="4" class="wrapper">
+                  <p class="p" *ngIf="!p.amount">1</p>
+                  <p class="p" *ngIf="p.amount">{{p.amount}}</p>
+                </ion-col>
+                <ion-col size="4" class="wrapper">
+                  <ion-button color="new" fill="clear" (click)="increaseProductCount(p)">
+                    <ion-icon name="add-circle" slot="icon-only"></ion-icon>
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-button class="addtocart" (click)="addToCart(p)">add to cart</ion-button>
+              </ion-row>
+
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+  </ion-list>
+</ion-content>

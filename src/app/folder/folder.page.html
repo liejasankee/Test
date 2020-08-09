@@ -1,0 +1,92 @@
+<ion-header>
+
+  <ion-toolbar class="headerclr">
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back" [text]="''" [hidden]="backbtn"></ion-back-button>
+      <ion-menu-button class="menubtnspec" [disabled]="false">
+      </ion-menu-button>
+    </ion-buttons>
+    <app-header class="heading1"></app-header>
+  </ion-toolbar>
+</ion-header>
+<ion-content *ngIf="loadimg">
+  <lottie-animation-view [options]="load" [width]="200" [height]="200">
+  </lottie-animation-view>
+</ion-content>
+<ion-content *ngIf="!loadimg" [fullscreen]="false">
+  <div id="container" *ngIf="folder =='ShopAll'">
+    <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)"
+      (ionCancel)="onCancel($event)">
+    </ion-searchbar>
+    <div *ngIf="listt">
+      <ion-slides pager="true" [options]="slideOptsOne">
+        <ion-slide>
+          <img src="assets\img\pic1.jpg" />
+        </ion-slide>
+        <ion-slide>
+          <img src="assets\img\pic2.jpg" />
+        </ion-slide>
+        <ion-slide>
+          <img src="assets\img\pic3.jpg" />
+        </ion-slide>
+      </ion-slides>
+      <div class="box">
+        <ion-grid>
+          <ion-row>
+            <ion-col class="col">Categories</ion-col>
+            <ion-col class="fontcolor" (click)="openCategorypage()">view all</ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <ion-grid>
+
+
+        <div class="slidespec">
+          <ion-card class="slideCard" *ngFor="let c of categories" (click)="openCategory(c)">
+            <ion-row class="prodcard">
+              <img class="prodimg" src="https://b2b.wownaturalfoods.com/api/asset/{{c.image_url}}_m.jpeg" />
+            </ion-row>
+            <br>
+            <ion-row style="justify-content: center;">
+              <p class="titlespec">
+                {{c.categories_name}}
+              </p>
+            </ion-row>
+          </ion-card>
+        </div>
+
+        <ion-row>
+          <ion-card class="card2spec" style="width: 100%;height: 100%;">
+            <ion-col>
+              <lottie-animation-view [options]="call" [width]="80" [height]="80" (click)="calling()">
+              </lottie-animation-view>
+            </ion-col>
+            <ion-col>
+              <lottie-animation-view [options]="mail" [width]="80" [height]="80" (click)="presentModal()">
+              </lottie-animation-view>
+            </ion-col>
+            <ion-col>
+              <lottie-animation-view [options]="sms" [width]="80" [height]="80" (click)="sendTxt()">
+              </lottie-animation-view>
+            </ion-col>
+          </ion-card>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div *ngIf="!listt">
+      <ion-grid>
+        <ion-list>
+          <ion-item *ngFor="let item of list; let i = index">
+            <ion-label [routerLink]="['/productdetail/', item.prod_id]">{{item.product_name}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-grid>
+    </div>
+    <!-- <app-product-list [link]="all"></app-product-list> -->
+  </div>
+  <div id="container" *ngIf="folder !='ShopAll'">
+    <app-product-list [link]="folder"></app-product-list>
+  </div>
+
+</ion-content>
+<app-footer></app-footer>

@@ -1,0 +1,50 @@
+.styles
+{
+    margin: 20px;
+    height: 270px;
+    border: 2px solid #d37b1a;
+    background-color: #2224288f;
+    color: white;
+    font-weight: 300;
+    font-family: cursive;
+}
+.container
+{margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+.labeldesc
+{
+    margin: 20px;
+    font-family: cursive;
+}
+.btn
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.headerclr
+{
+    --background: orange;
+}
+.centering
+{
+    position:absolute;
+    left: 0;
+    right: 0;
+    margin:0 auto;
+    top:50%;
+    transform:translateY(-50%)
+}
+.imgbck{
+     
+     --background: url(/assets/img/bg.jpg)  0 0/100% 100% no-repeat;
+    background-size: cover;
+}
+ion-label
+{
+    word-spacing: 0.1em;
+    letter-spacing:0.1 ems ;
+    color: whitesmoke;
+}
